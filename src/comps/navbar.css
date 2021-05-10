@@ -1,0 +1,46 @@
+header{
+    padding:16px 1.6rem;
+    color:#fafafafa;
+    display:flex;
+    flex-flow:column wrap;
+    background-color:#21222D;
+    border:1px solid #333;
+    box-shadow: 3px 4px 5px rgba(0,0,0,1);
+    border-bottom-left-radius:12px;
+    border-bottom-right-radius:12px;
+}
+
+
+header > nav{
+    display:flex;
+    flex-direction: column;
+    text-align:center;
+}
+
+nav > h1{
+    font-size:2rem;
+    margin-bottom:5px;
+}
+
+.nav__keys{
+    display:flex;
+    justify-content:space-between;
+}
+
+.nav__keys > input{
+    padding:10px;
+    font-size:18px;
+    background-color:#DBDBE5;
+    /* color:white; */
+}
+
+.nav__keys > input:focus{
+    outline:0;
+}
+
+.nav__keys > button{
+    width:80px;
+    height:40px;
+    font-size:18px;
+    background-color:#DBDBE5;
+}
