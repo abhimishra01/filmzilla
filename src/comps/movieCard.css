@@ -2,11 +2,11 @@
     position: relative;
     display:flex;
     flex-flow:column nowrap;
-    /* background-color:var(--moviecard-background); */
+    margin:0.4rem;
     background-color: var(--secondary);
     width: 260px;
-    height: 360px;
-    max-height: 400px;
+    min-height: 500px;
+    max-height: 600px;
     /* padding:10px; */
     box-shadow: 2px 3px 10px 4px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.4s;
