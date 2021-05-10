@@ -1,0 +1,8 @@
+.movies__page{
+    display:flex;
+    flex-wrap: wrap;
+    height:100vh;
+    width:100vh;
+    align-items: center;
+    justify-content: center;
+}
