@@ -89,23 +89,23 @@ nav > p{
 
 @media screen and (max-width: 460px) {
     nav>h1 {
-        letter-spacing: 4px;
-        font-size: 1rem;
+        letter-spacing: 5px;
+        font-size: 2rem;
     }
 
     nav>p {
         letter-spacing: 2px;
         font-family: cursive;
-        font-size: 8px;
+        font-size: 10px;
     }
 
     .nav__keys {
-        margin-top: 20px;
+        margin-top: 3.3rem;
     }
 
     .nav__keys>input {
         padding: 6px;
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .nav__keys>input:focus {
@@ -113,8 +113,8 @@ nav > p{
     }
 
     .nav__keys>button {
-        width: 50px;
-        height: 25px;
-        font-size: 10px;
+        width: 54px;
+        height: 30px;
+        font-size: 12px;
     }
 }
