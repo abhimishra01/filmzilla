@@ -1,6 +1,6 @@
 header{
     padding:16px 1.6rem;
-    color:#fafafafa;
+    color:var(--primary-heading);
     display:flex;
     flex-flow:column wrap;
     background-color:#21222D;
