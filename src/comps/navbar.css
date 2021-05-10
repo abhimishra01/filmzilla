@@ -36,14 +36,14 @@ nav > p{
     margin-top:15px;
 }
 
-.nav__keys > input{
+.nav__keys >form  > input{
     padding:10px;
     font-size:18px;
-    background-color:#DBDBE5;
-    /* color:white; */
+    background-color:var(--primary);
+   
 }
 
-.nav__keys > input:focus{
+.nav__keys > form > input:focus{
     outline:0;
 }
 
@@ -71,12 +71,12 @@ nav > p{
  .nav__keys{
      margin-top:12px;
  }
- .nav__keys>input {
+ .nav__keys > form >input {
      padding: 6px;
      font-size: 12px;
  }
 
- .nav__keys>input:focus {
+ .nav__keys > form >input:focus {
      outline: 0;
  }
 
@@ -103,12 +103,12 @@ nav > p{
         margin-top: 3.3rem;
     }
 
-    .nav__keys>input {
+    .nav__keys > form >input {
         padding: 6px;
         font-size: 12px;
     }
 
-    .nav__keys>input:focus {
+    .nav__keys > form >input:focus {
         outline: 0;
     }
 
