@@ -32,7 +32,7 @@
     flex:0.10;
     display: flex;
     padding: 12px 20px;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     /* border-bottom: 1px dashed var(--secondary); */
     border-bottom-left-radius: 12px;
@@ -76,4 +76,106 @@ letter-spacing:1px;
 .movie__card:hover .movie__cardDesc{
     transform:translateY(0%);
 
+}
+
+
+@media screen and (max-width:830px){
+ .movie__card {
+     width: 200px;
+     min-height: 450px;
+     max-height: 500px;
+ }
+
+}
+
+@media screen and (max-width:640px) {
+    .movie__card {
+        width: 160px;
+        min-height: 400px;
+        max-height: 420px;
+    }
+
+    .movie__card>img {
+        flex: 0.60;
+        object-fit: cover;
+        max-width: 100%;
+        height: 85%;
+    }
+
+
+    .movie__cardHeader>h3 {
+        font-size:14px;
+        letter-spacing: 1px;
+    }
+
+    .movie__cardHeader>p {
+        margin-left:5px;
+        font-size:14px;
+        padding: 2px 4px;
+    }
+
+    .movie__cardDesc {
+        font-size:14px;
+    }
+}
+
+@media screen and (max-width:520px) {
+    .movie__card {
+        /* position: relative;
+     display: flex;
+     flex-flow: column wrap; */
+        width: 130px;
+        min-height: 340px;
+        max-height: 360px;
+    }
+
+
+    .movie__card>img {
+        flex: 0.50;
+        object-fit: cover;
+    }
+
+    .movie__cardHeader>h3 {
+        font-size: 12px;
+        letter-spacing: 1px;
+        align-self: center;
+    }
+
+    .movie__cardHeader>p {
+        margin-left: 10px;
+        font-size: 12px;
+        align-self: center;
+         }
+
+    .movie__cardDesc {
+        font-size:12px;
+    }
+}
+
+
+@media screen and (max-width:440px) {
+    .movie__card {
+        /* display:grid;
+        grid-template-columns: repeat(3,1fr); */
+        width: 100px;
+        min-height: 300px;
+        max-height: 330px;;
+    }
+
+    .movie__cardHeader{
+        justify-content:space-evenly;
+    }
+    .movie__cardHeader>h3 {
+        font-size: 10px;
+    }
+
+    .movie__cardHeader>p {
+        margin-left: 8px;
+        font-size: 10px;
+        align-self: center;
+    }
+
+    .movie__cardDesc {
+        font-size: 11px;
+    }
 }
