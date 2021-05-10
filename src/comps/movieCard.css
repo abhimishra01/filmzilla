@@ -39,6 +39,8 @@ color: var(--primary-heading);
     background-color: var(--rating-background);
     padding: 4px 8px;
     border-radius: 30%;
+    font-family: 'Rubik',
+    sans-serif;
     background-color: var(--primary-heading);
     color: var(--secondary);
 }
