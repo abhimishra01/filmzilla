@@ -28,8 +28,7 @@ nav > p{
     sans-serif;
     letter-spacing:5px;
     font-family: cursive;
-    font-size:14px;
-    /* text-decoration: underline; */
+    font-size:15px;
 }
 .nav__keys{
     display:flex;

@@ -12,7 +12,7 @@ const NavBar = () => {
     <header>
     <nav>
         <h1>Welcome to FilmZilla</h1>
-        <p>Your one stop to fetch your favourite movies</p>
+        <p>Your one stop to fetch your favourite movies . . .</p>
         <div className="nav__keys">
             <button>User</button>
             <input
