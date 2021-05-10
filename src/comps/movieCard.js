@@ -12,9 +12,9 @@ const MovieCard = () => {
             <p>5.7</p>
         </div>
         {/* Movie description : by default is hidden */}
-        {/* <div className="movie__cardDesc">
+        <div className="movie__cardDesc">
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, iste culpa sit nostrum id laudantium unde, aliquam suscipit vitae ad ipsum, cumque fugit atque blanditiis dolore? Ab consequatur mollitia deserunt?</p>
-        </div> */}
+        </div>
      </div>);
 }
  
