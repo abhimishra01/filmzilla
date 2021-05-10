@@ -8,14 +8,17 @@
     min-height: 500px;
     max-height: 600px;
     /* padding:10px; */
-    box-shadow: 2px 3px 10px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 3px 10px 4px rgba(0, 0, 0, 0.4);
     transition: box-shadow 0.4s;
     border-radius: 12px;
     overflow:hidden;
 }
 
 .movie__card:hover {
-    box-shadow: 2px 3px 10px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 3px 15px 6px rgba(0, 0, 0, 0.8);
+}
+.movie__card:focus {
+    outline:0;
 }
 
 .movie__card>img {
@@ -39,6 +42,7 @@
 .movie__cardHeader > h3 {
 font-family:  cursive;
 color: var(--primary-heading);
+letter-spacing:1px;
 }
 
 .movie__cardHeader>p {
@@ -56,6 +60,7 @@ color: var(--primary-heading);
     position:absolute;
     font-family: Poppins , sans-serif;
     color: var(--primary);
+    letter-spacing:2px;
     padding:8px;
     top:1;
     bottom:0;
