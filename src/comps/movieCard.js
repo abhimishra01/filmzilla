@@ -1,5 +1,5 @@
 import "./movieCard.css"
-import {DEFAULT_POSTER_Path} from "../api/api";
+import {DEFAULT_POSTER_Path,IMAGE_API} from "../api/api";
 
 const MovieCard = ({movies}) => {
     
@@ -8,16 +8,17 @@ const MovieCard = ({movies}) => {
         {/* Poster of the movie */}
         {movies && movies.map(movie =>{
             return (
-                <div className="movie__card">
-        <img src={DEFAULT_POSTER_Path} alt="" />
+                <div key={movie.id} className="movie__card">
+        {/* If movie's poster path is available. show, otheriwse show a default poster img */}
+        <img src={movie.poster_path?IMAGE_API + movie.poster_path : DEFAULT_POSTER_Path} alt="" />
         {/* Movie Card Header : Movie name & Rating */}
         <div className="movie__cardHeader">
-            <h3></h3>
-            <p>5.7</p>
+            <h3>{movie.title}</h3>
+            <p>{movie.vote_average}</p>
         </div>
         {/* Movie description : by default is hidden */}
         <div className="movie__cardDesc">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, iste culpa sit nostrum id laudantium unde, aliquam suscipit vitae ad ipsum, cumque fugit atque blanditiis dolore? Ab consequatur mollitia deserunt?</p>
+            <p>{movie.overview}</p>
         </div>
                 </div>
             )
