@@ -1,11 +1,13 @@
 import {useState} from "react";
 import "./navbar.css";
+import {SEARCH_API} from "../api/api";
 
-const NavBar = () => {
+const NavBar = ({getMovies}) => {
     const [searchValue, setsearchValue] = useState("");
-    
-    const handleSubmit =()=>{
-
+    const handleSubmit =(e)=>{
+        e.preventDefault();
+        getMovies(SEARCH_API + searchValue);
+        setsearchValue("");
     }
     const handleSearch =()=>{}
     const handleChange = (e) => {
