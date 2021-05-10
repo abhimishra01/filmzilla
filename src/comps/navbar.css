@@ -34,6 +34,7 @@ nav > p{
     display:flex;
     justify-content:space-between;
     margin-top:15px;
+    align-items: baseline;
 }
 
 .nav__keys >form  > input{
@@ -60,13 +61,13 @@ nav > p{
 @media screen and (max-width: 800px){
  nav>h1 {
      letter-spacing: 4px;
-     font-size: 1.4rem;
+     font-size:1.9rem;
  }
 
  nav>p {
      letter-spacing: 2px;
      font-family: cursive;
-     font-size: 10px;
+     font-size: 12px;
  }
 
  .nav__keys{
@@ -86,6 +87,13 @@ nav > p{
      height: 30px;
      font-size: 12px;
  }
+}
+
+@media screen and (max-width: 710px){
+
+    .nav__keys > form >input{
+        margin-top:20px;
+    }
 }
 
 @media screen and (max-width: 460px) {
@@ -117,5 +125,32 @@ nav > p{
         width: 54px;
         height: 30px;
         font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    nav>p {
+        margin-top:1px;
+        letter-spacing: 1px;
+        font-size: 8px;
+    }
+
+    .nav__keys {
+        margin-top: 2rem;
+    }
+
+    .nav__keys>form>input {
+        padding: 3px 0px;
+        font-size: 12px;
+    }
+
+    .nav__keys>form>input:focus {
+        outline: 0;
+    }
+
+    .nav__keys>button {
+        width: 40px;
+        height: 25px;
+        font-size: 10px;
     }
 }
