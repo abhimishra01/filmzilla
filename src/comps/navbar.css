@@ -17,11 +17,20 @@ header > nav{
     text-align:center;
 }
 
-nav > h1{
+nav>h1 {
+    font-family: 'Exo', sans-serif;
+    letter-spacing:5px;
     font-size:2rem;
-    margin-bottom:5px;
 }
 
+nav > p{
+    font-family: 'Quicksand',
+    sans-serif;
+    letter-spacing:5px;
+    font-family: cursive;
+    font-size:14px;
+    /* text-decoration: underline; */
+}
 .nav__keys{
     display:flex;
     justify-content:space-between;

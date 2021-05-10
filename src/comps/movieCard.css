@@ -30,8 +30,9 @@
     border-bottom-right-radius: 12px;
 }
 
-.movie__cardHeader>h3 {
-    color: var(--primary-heading);
+.movie__cardHeader > h3 {
+font-family:  cursive;
+color: var(--primary-heading);
 }
 
 .movie__cardHeader>p {
