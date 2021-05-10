@@ -2,7 +2,7 @@ import './App.css';
 import MoviesPage from './comps/moviespage';
 import NavBar from './comps/navbar';
 import {useState,useEffect} from "react";
-import DEFAULT_API from "./api/api";
+import TRENDING_API from "./api/api";
 
 function App() {
 // Declaring movies state array
@@ -22,7 +22,7 @@ const getMovies = async(api) =>{
 }
 
 useEffect(()=>{
-    getMovies(DEFAULT_API);
+    getMovies(TRENDING_API);
 },[])
 
 

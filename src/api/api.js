@@ -1,4 +1,4 @@
-const DEFAULT_API = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=d7eb245562d608898cbbab8c823d0259";
+const TRENDING_API = "https://api.themoviedb.org/3/trending/movie/day?api_key=d7eb245562d608898cbbab8c823d0259";
 
 const SEARCH_API = "https://api.themoviedb.org/3/search/movie?api_key=d7eb245562d608898cbbab8c823d0259&language=en-US&query=";
 
@@ -7,6 +7,6 @@ const DEFAULT_POSTER_Path = "https://images.unsplash.com/photo-1598899134739-24c
 const IMAGE_API = "https://image.tmdb.org/t/p/w1280";
 
 
-export default DEFAULT_API;
+export default TRENDING_API;
 
 export {SEARCH_API, DEFAULT_POSTER_Path, IMAGE_API};
