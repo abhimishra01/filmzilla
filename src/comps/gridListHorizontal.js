@@ -1,11 +1,11 @@
-import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
-import tileData from './tileData';
+import {IMAGE_API, DEFAULT_POSTER_Path} from "../api/api";
+// import DEFAULT_POSTER_Path from '../api/api';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,32 +29,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-/**
- * The example data is structured as follows:
- *
- * import image from 'path/to/image.jpg';
- * [etc...]
- *
- * const tileData = [
- *   {
- *     img: image,
- *     title: 'Image',
- *     author: 'author',
- *   },
- *   {
- *     [etc...]
- *   },
- * ];
- */
-export default function SingleLineGridList() {
+export default function SingleLineGridList({movies}) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={2.5}>
-        {tileData.map((tile) => (
-          <GridListTile key={tile.img}>
-            <img src={tile.img} alt={tile.title} />
+        {movies && movies.map((tile) => (
+          <GridListTile key={tile.id}>
+             <img src={tile.poster_path?IMAGE_API + tile.poster_path : DEFAULT_POSTER_Path} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
               classes={{
