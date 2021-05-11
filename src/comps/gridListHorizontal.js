@@ -10,6 +10,7 @@ import "./gridListhz.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    padding:"2px 0px",
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
@@ -18,14 +19,16 @@ const useStyles = makeStyles((theme) => ({
   },
   gridList: {
     flexWrap: 'nowrap',
-    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
   },
   title: {
     color: "#ffff",
+    fontSize:"0.87rem",
+    fontFamily:"Poppins, sans-serif",
+    fontWeight:"700",
+    letterSpacing:"1px"
   },
   titleBar: {
-    //   background:"black",
     background:
       'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.4) 100%)',
   },
