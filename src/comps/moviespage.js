@@ -1,12 +1,14 @@
-// import MovieCard from "./movieCard";
 import "./moviespage.css";
 import SingleLineGridList from "./gridListHorizontal";
 
 const MoviesPage = ({movies}) => {
     
 return ( <div className="movies__page">
-        {/* <MovieCard  movies={movies}/> */}
+            <div className="heading__trending">
+                <h2>Trending Today</h2>
       <SingleLineGridList movies={movies}/>
+            </div>
+
     </div> );    
 }
  
