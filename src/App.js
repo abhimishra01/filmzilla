@@ -2,7 +2,7 @@ import './App.css';
 import MoviesPage from './comps/moviespage';
 import NavBar from './comps/navbar';
 import {useState,useEffect} from "react";
-import TRENDING_API from "./api/api";
+import TRENDING_API_MOVIES from "./api/api";
 // import SingleLineGridList from "./comps/gridListHorizontal";
 function App() {
 // Declaring movies state array
@@ -22,7 +22,7 @@ const getMovies = async(api) =>{
 }
 
 useEffect(()=>{
-    getMovies(TRENDING_API);
+    getMovies(TRENDING_API_MOVIES);
 },[])
 
 
