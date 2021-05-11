@@ -1,15 +1,15 @@
-export const initState = {
+export const initialState = {
     user:null,
-    trending_api_movies = [],
-    trending_api_tvshows = [],
+    trending_api_movies : [],
+    trending_api_tvshows : [],
 }
 
 
-export const action = [
-    SET_USER = "SET_USER",
-    SET_Trending_api_movies = "SET_Trending_api_movies",
-    SET_SET_Trending_api_tvshows = "SET_SET_Trending_api_tvshows",
-]
+export const action = {
+    SET_USER: "SET_USER",
+    SET_Trending_api_movies: "SET_Trending_api_movies",
+    SET_SET_Trending_api_tvshows: "SET_SET_Trending_api_tvshows",
+}
 
 
 const reducer = (state,action) => {
