@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import {IMAGE_API, DEFAULT_POSTER_Path} from "../api/api";
 // import DEFAULT_POSTER_Path from '../api/api';
+import "./gridListhz.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,11 +22,12 @@ const useStyles = makeStyles((theme) => ({
     transform: 'translateZ(0)',
   },
   title: {
-    color: theme.palette.primary.light,
+    color: "#ffff",
   },
   titleBar: {
+    //   background:"black",
     background:
-      'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+      'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.4) 100%)',
   },
 }));
 
@@ -34,9 +36,9 @@ export default function SingleLineGridList({movies}) {
 
   return (
     <div className={classes.root}>
-      <GridList className={classes.gridList} cols={2.5}>
+      <GridList spacing={5} cellHeight={280} className={classes.gridList} cols={5.5}>
         {movies && movies.map((tile) => (
-          <GridListTile key={tile.id}>
+          <GridListTile  key={tile.id}>
              <img src={tile.poster_path?IMAGE_API + tile.poster_path : DEFAULT_POSTER_Path} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
@@ -45,8 +47,8 @@ export default function SingleLineGridList({movies}) {
                 title: classes.title,
               }}
               actionIcon={
-                <IconButton aria-label={`star ${tile.title}`}>
-                  <StarBorderIcon className={classes.title} />
+                <IconButton  aria-label={`star ${tile.title}`}>
+                  <StarBorderIcon className="star" />
                 </IconButton>
               }
             />

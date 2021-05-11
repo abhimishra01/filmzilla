@@ -1,3 +1,5 @@
-.grid::-webkit-scrollbar {
-    display: block;
+.star{
+    color:yellow;
+    color:red;
+    object-fit: fill;
 }
