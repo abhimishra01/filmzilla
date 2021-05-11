@@ -3,7 +3,7 @@ import MoviesPage from './comps/moviespage';
 import NavBar from './comps/navbar';
 import {useState,useEffect} from "react";
 import TRENDING_API from "./api/api";
-import SingleLineGridList from "./comps/gridListHorizontal";
+// import SingleLineGridList from "./comps/gridListHorizontal";
 function App() {
 // Declaring movies state array
 const [movies,setMovies] = useState([]);
@@ -29,8 +29,8 @@ useEffect(()=>{
   return (
     <div className="App">
       <NavBar getMovies={getMovies}/>
-      {/* <MoviesPage movies={movies}/> */}
-      <SingleLineGridList movies={movies}/>
+      <MoviesPage movies={movies}/>
+      {/* <SingleLineGridList movies={movies}/> */}
       </div>
   );
 }
