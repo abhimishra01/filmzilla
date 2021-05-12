@@ -3,7 +3,7 @@ header{
     color:var(--primary-heading);
     display:flex;
     flex-flow:column wrap;
-    background-color:#21222D;
+    background-color:var(--secondary);
     border:1px solid #333;
     box-shadow: 3px 4px 5px rgba(0,0,0,1);
     border-bottom-left-radius:12px;
