@@ -15,12 +15,15 @@ footer {
     border-bottom-right-radius: 12px;
 
 }
-
+.copyright::before{
+    content:"\00A9"
+}
 .copyright{
+    font-size:14px;
     margin-bottom:0.3rem;
-    font-family: 'Exo',
+    font-family: 'Rubik',
     sans-serif;
-    letter-spacing:3px;
+    letter-spacing:1px;
 }
 
 
