@@ -1,5 +1,8 @@
 const TRENDING_API_MOVIES = "https://api.themoviedb.org/3/trending/movie/day?api_key=d7eb245562d608898cbbab8c823d0259";
 
+const TRENDING_API_MOVIES_BY_WEEK = "https://api.themoviedb.org/3/trending/movie/week?api_key=d7eb245562d608898cbbab8c823d0259";
+
+const TRENDING_API_TVSHOWS_BY_WEEK = "https://api.themoviedb.org/3/trending/tv/week?api_key=d7eb245562d608898cbbab8c823d0259";
 
 const TRENDING_API_TVSHOWS = "https://api.themoviedb.org/3/trending/tv/day?api_key=d7eb245562d608898cbbab8c823d0259";
 
@@ -12,4 +15,4 @@ const IMAGE_API = "https://image.tmdb.org/t/p/w1280";
 
 export default TRENDING_API_MOVIES;
 
-export {SEARCH_API, DEFAULT_POSTER_Path, TRENDING_API_TVSHOWS, IMAGE_API};
+export {SEARCH_API, DEFAULT_POSTER_Path, TRENDING_API_TVSHOWS, IMAGE_API,TRENDING_API_MOVIES_BY_WEEK,TRENDING_API_TVSHOWS_BY_WEEK};
