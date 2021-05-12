@@ -7,6 +7,8 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import {IMAGE_API, DEFAULT_POSTER_Path} from "../api/api";
 import "./gridListhz.css";
 import TrendingToggleButton from './toggleBtn';
+import BookmarkBorderTwoToneIcon from '@material-ui/icons/BookmarkBorderTwoTone';
+                  
 
 
 const useStyles = makeStyles((theme) => ({
@@ -39,7 +41,13 @@ export default function SingleLineGridList({contentArray, tvShows}) {
 
   return (
     <div className="trending_gridContainer">
-    <h2>{tvShows?"TV Shows" : "Movies"} Trending : <TrendingToggleButton tvShow={tvShows?tvShows:null}/></h2>
+      <div className="trending_gridContainerHead">
+          <h2>{tvShows?"TV Shows" : "Movies"} Trending : <TrendingToggleButton tvShow={tvShows?tvShows:null}/>
+          </h2>
+        <IconButton>
+            <BookmarkBorderTwoToneIcon className="bookmark__iconBtn" fontSize={"large"}/>
+        </IconButton>
+      </div>
     <div className={classes.root}>
       <GridList spacing={3} cellHeight={250} className={classes.gridList} cols={5.5}>
         {contentArray.map((tile) => (

@@ -1,5 +1,11 @@
 .star{
-    color:yellow;
+    /* color:yellow; */
     color:red;
     object-fit: fill;
+}
+
+.bookmark__iconBtn{
+    margin:0px 10px;    
+    color:var(--primary);   
+
 }

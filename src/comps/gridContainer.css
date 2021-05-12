@@ -8,10 +8,15 @@
     margin-bottom:2rem;  
 
 }
+.trending_gridContainerHead{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+}
 
-.trending_gridContainer>h2 {
-    margin: 10px;
-    font-size:1.2rem;
+.trending_gridContainerHead>h2 {
+    margin: 6px 8px;
+    font-size:1.4rem;
     letter-spacing:2px;
     color: var(--primary-heading);
     font-family: Poppins, sans-serif;
