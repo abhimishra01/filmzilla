@@ -1,0 +1,30 @@
+footer {
+    height:13vh;
+    padding: 16px 1.6rem;
+    color: var(--primary-heading);
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-flow: column wrap;
+    background-color: #21222D;
+    background-color: var(--secondary);
+    border: 1px solid #333;
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, 1);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+}
+
+.copyright{
+    margin-bottom:0.3rem;
+    font-family: 'Exo',
+    sans-serif;
+    letter-spacing:3px;
+}
+
+
+.footer_link > a{
+    color:var(--primary);
+    cursor:pointer;
+    text-decoration:none;
+}
