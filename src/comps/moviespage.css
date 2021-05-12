@@ -8,16 +8,3 @@
     align-items: center;
     justify-content: center;
 }
-
-.heading__trending {
-    text-align: center;
-    /* padding: 4px 10px; */
-    width:100%;
-    background-color:var(--secondary);
-    margin-bottom:0.5rem;
-}
-.heading__trending > h2{
-    margin:10px 0px;
-    color: var(--primary-heading);
-    font-family: Poppins, sans-serif;
-}
