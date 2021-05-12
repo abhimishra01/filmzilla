@@ -46,6 +46,7 @@ nav > p{
 }
 .nav__userBtn {
     /* position:relative; */
+    padding:0px 8px;
     width: 80px;
     height: 40px;
     font-size: 18px;
@@ -55,12 +56,12 @@ nav > p{
     outline:0;
 }
 
-.nav__keys > NavUserMenu{
+/* .nav__keys > NavUserMenu{
     width:80px;
     height:40px;
     font-size:18px;
     background-color:#DBDBE5;
-}
+} */
 
 
 
@@ -88,7 +89,7 @@ nav > p{
      outline: 0;
  }
 
- .nav__keys>button {
+ .nav__userBtn {
      width: 50px;
      height: 30px;
      font-size: 12px;
@@ -127,7 +128,7 @@ nav > p{
         outline: 0;
     }
 
-    .nav__keys>button {
+ .nav__userBtn {
         width: 54px;
         height: 30px;
         font-size: 12px;
@@ -154,7 +155,7 @@ nav > p{
         outline: 0;
     }
 
-    .nav__keys>button {
+.nav__userBtn {
         width: 40px;
         height: 25px;
         font-size: 10px;
