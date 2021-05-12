@@ -18,7 +18,7 @@
 body {
     box-sizing: border-box;
   margin: 0;
-  background-color:#DBDBE5;
+  background-color:var(--primary);
   font-family: Poppins, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
