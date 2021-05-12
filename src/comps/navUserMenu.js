@@ -7,17 +7,24 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
+import {StateContext} from "../context/stateProvider";
+import {auth} from "../keys/firebaseConfig";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
 },
 paper: {
-    // marginRight: theme.spacing(2),
+    marginRight: theme.spacing(2),
   },
 }));
 
 export default function NavUserMenu() {
+
+// Fetching the user state from our context API layer :
+  const [user,setUser] = React.useContext(StateContext).user
+
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
@@ -33,6 +40,11 @@ export default function NavUserMenu() {
 
     setOpen(false);
   };
+
+
+  const handleLogout = () => {
+      auth.signOut();
+  }
 
   function handleListKeyDown(event) {
     if (event.key === 'Tab') {
@@ -73,9 +85,9 @@ export default function NavUserMenu() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose} style={{color:'red)'}}>Logout</MenuItem>
+                    {/* <MenuItem onClick={handleClose}>Profile</MenuItem>
+                    <MenuItem onClick={handleClose}>My account</MenuItem> */}
+                    <MenuItem onClick={handleLogout} >Logout</MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
