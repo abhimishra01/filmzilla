@@ -6,7 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import {IMAGE_API, DEFAULT_POSTER_Path} from "../api/api";
 import "./gridListhz.css";
-import TrendingToggleButton,{toggleStates} from './toggleBtn';
+import TrendingToggleButton from './toggleBtn';
 
 
 const useStyles = makeStyles((theme) => ({
