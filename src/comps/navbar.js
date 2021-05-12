@@ -1,12 +1,15 @@
-import {useState} from "react";
+import {useContext,useState} from "react";
 import "./navbar.css";
 import {SEARCH_API} from "../api/api";
+import {StateContext} from "../context/stateProvider";
 
 const NavBar = ({fetchData}) => {
+    const [searching_movie_result, setSearchingMoviesResult] = useContext(StateContext).searching_movies_result
+    console.log(searching_movie_result);
     const [searchValue, setsearchValue] = useState("");
     const handleSubmit =(e)=>{
         e.preventDefault();
-        fetchData(SEARCH_API + searchValue);
+        fetchData(SEARCH_API + searchValue,setSearchingMoviesResult);
         setsearchValue("");
     }
     const handleSearch =()=>{}

@@ -21,10 +21,11 @@ if(searchingMovieResult){
     </div> )
 }
 
-return ( <div className="movies__page">
-       <GridContainer heading="Trending Today : Movies"  movieContainer={true} />
-       <GridContainer heading="Trending Today : TV Shows" tvShowContainer={true} />
-    </div> );    
+else{
+    return ( <div className="movies__page">
+        <GridContainer heading="Trending Today : Movies"  movieContainer={true} />
+        <GridContainer heading="Trending Today : TV Shows" tvShowContainer={true} />
+        </div> );    
+} 
 }
- 
 export default MoviesPage;  
