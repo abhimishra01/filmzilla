@@ -28,7 +28,6 @@ const fetchData = async(api,setter) =>{
 }
 
 useEffect(()=>{
-
     fetchData(TRENDING_API_MOVIES,setMovies);
     fetchData(TRENDING_API_TVSHOWS,setTvShows);
 },[])
@@ -37,9 +36,7 @@ useEffect(()=>{
   return (
     <div className="App">
       <NavBar fetchData={fetchData}/>
-      <MoviesPage 
-      movies={movies}
-      tvShows={tvShows}/>
+      <MoviesPage />
       {/* <SingleLineGridList movies={movies}/> */}
       </div>
   );
