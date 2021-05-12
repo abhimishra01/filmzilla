@@ -4,6 +4,7 @@ import NavBar from './comps/navbar';
 import {useContext,useEffect} from "react";
 import TRENDING_API_MOVIES, { TRENDING_API_TVSHOWS } from "./api/api";
 import {StateContext,fetchData} from "./context/stateProvider";
+import FooterBar from './comps/footer';
 
 function App() {
 
@@ -24,7 +25,7 @@ useEffect(()=>{
     <div className="App">
       <NavBar fetchData={fetchData}/>
       <MoviesPage />
-      {/* <SingleLineGridList movies={movies}/> */}
+      <FooterBar/>
       </div>
   );
 }

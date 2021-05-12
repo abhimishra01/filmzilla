@@ -7,8 +7,8 @@ import TRENDING_API_MOVIES,{TRENDING_API_TVSHOWS, TRENDING_API_TVSHOWS_BY_WEEK,T
 
 
 
-export default function TrendingToggleButton(tvShow) {
-  const [alignment, setAlignment] = useState("left");
+export default function TrendingToggleButton ({tvShow}) {
+  const [alignment, setAlignment] = useState("today");
   
   const [tvShows, setTvShows] = useContext(StateContext).tvShows_popular
   const [movies, setMovies] = useContext(StateContext).movies_popular
@@ -19,22 +19,23 @@ export default function TrendingToggleButton(tvShow) {
 
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
-    fetchData(TRENDING_API_MOVIES,setMovies);
-  };
+    if(newAlignment === "today"){
+      if(tvShow){
 
-  const toggleMoviesbyToday = ()=>{
+        fetchData(TRENDING_API_TVSHOWS,setTvShows);
+      }else{
+      fetchData(TRENDING_API_MOVIES,setMovies);
+    }    
+    }
+    
+  if(newAlignment === "week"){
+      if(tvShow){
+        fetchData(TRENDING_API_TVSHOWS_BY_WEEK,setTvShows);
+      }else{
+      fetchData(TRENDING_API_MOVIES_BY_WEEK,setMovies);
+    }    
+    }
   }
-  const toggleShowsbyToday = () =>{
-    fetchData(TRENDING_API_TVSHOWS,setTvShows);
-  }
-  const toggleShowsbyWeek = () =>{
-    fetchData(TRENDING_API_TVSHOWS_BY_WEEK,setTvShows);
-  }
-
-  const toggleMoviesbyWeek = () =>{
-    fetchData(TRENDING_API_MOVIES_BY_WEEK,setMovies);
-  }
-
   return (
     <ToggleButtonGroup
     value={alignment}
@@ -43,16 +44,13 @@ export default function TrendingToggleButton(tvShow) {
       aria-label="text alignment"
       >
       <ToggleButton
-      onClick={tvShow?toggleShowsbyToday:toggleMoviesbyToday}
       style={{color:"var(--secondary)",fontSize:"0.8rem",padding:"0.98rem", fontFamily:"Rubik, sans-serif"}}  
-      value="left" aria-label="left aligned">
+      value="today">
         Today
       </ToggleButton>
-        onClick={tvShow?toggleShowsbyWeek:toggleMoviesbyWeek}
       <ToggleButton 
         style={{color:"var(--secondary)",fontSize:"0.8rem",padding:"0.98rem", fontFamily:"Rubik, sans-serif"}}  
-      value="center" 
-      aria-label="centered">
+      value="week">
         This Week
       </ToggleButton>
     </ToggleButtonGroup>
