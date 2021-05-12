@@ -1,15 +1,12 @@
 .trending_gridContainer {
-    /* margin:4px 0px; */
     border-radius:20px;
     font-size:1.2rem;
-    /* text-align: center; */
     padding: 4px;
-    width: 100%;
+    width: 98vw;
     background-color: var(--secondary);
     margin-top: 1rem; 
     margin-bottom:2rem;  
-    margin-right:300px;
-    margin-left:0px;
+
 }
 
 .trending_gridContainer>h2 {
