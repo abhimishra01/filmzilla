@@ -1,3 +1,4 @@
+// import {useContext} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
@@ -8,7 +9,7 @@ import {IMAGE_API, DEFAULT_POSTER_Path} from "../api/api";
 import "./gridListhz.css";
 import TrendingToggleButton from './toggleBtn';
 import BookmarkBorderTwoToneIcon from '@material-ui/icons/BookmarkBorderTwoTone';
-                  
+// import {StateContext} from "../context/stateProvider";                  
 
 
 const useStyles = makeStyles((theme) => ({
@@ -34,17 +35,32 @@ const useStyles = makeStyles((theme) => ({
     background:
       'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0.4) 100%)',
   },
+  rating: {
+    fontSize:"0.88rem",
+    color:"#fff",
+    margin:"4px",
+  }
 }));
 
 export default function SingleLineGridList({contentArray, tvShows}) {
   const classes = useStyles();
+
+  // const [bookmarks,setBookmarks] = useContext(StateContext).bookmarks
+  
+  const showMovieBookmarks = () =>{
+    console.log("Movie")
+  }
+
+  const showTvBookmarks =()=>{
+    console.log("TV")
+  }
 
   return (
     <div className="trending_gridContainer">
       <div className="trending_gridContainerHead">
           <h2>{tvShows?"TV Shows" : "Movies"} Trending : <TrendingToggleButton tvShow={tvShows?tvShows:null}/>
           </h2>
-        <IconButton>
+        <IconButton onClick={tvShows?showTvBookmarks:showMovieBookmarks}>
             <BookmarkBorderTwoToneIcon className="bookmark__iconBtn" fontSize={"large"}/>
         </IconButton>
       </div>
@@ -59,9 +75,10 @@ export default function SingleLineGridList({contentArray, tvShows}) {
                 root: classes.titleBar,
                 title: classes.title,
               }}
+              
               actionIcon={
                 <IconButton  aria-label={`star ${tile.title}`}>
-                  <StarBorderIcon className="star" />
+                <span class={classes.rating}>{tile.vote_average}</span>    <StarBorderIcon className="star" />
                 </IconButton>
               }
               />
