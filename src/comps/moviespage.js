@@ -26,8 +26,8 @@ if(searchingMovieResult){
 
 if(!searching){
     return ( <div className="movies__page">
-        <GridContainer heading="Trending Today : Movies"  movieContainer={true} />
-        <GridContainer heading="Trending Today : TV Shows" tvShowContainer={true} />
+        <GridContainer heading="Movies"  movieContainer={true} />
+        <GridContainer heading="TV Shows" tvShowContainer={true} />
         </div> );    
 } 
 else {
