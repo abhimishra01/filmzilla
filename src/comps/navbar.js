@@ -2,7 +2,7 @@ import {useContext,useState} from "react";
 import "./navbar.css";
 import {SEARCH_API} from "../api/api";
 import {StateContext} from "../context/stateProvider";
-
+import NavUserMenu from "./navUserMenu";
 const NavBar = ({fetchData}) => {
 
     // Fetching pieces of search states from context layer
@@ -39,9 +39,10 @@ const [searching, setSearching] = useContext(StateContext).searching;
         <h1>Welcome to FilmZilla</h1>
         <p>Your one stop to your favourite Entertainments . . .</p>
         <div className="nav__keys">
-            <button
-            // onClick={handleSearch}
-            >User</button>
+                <div className="nav__userBtn">
+                    <NavUserMenu/>
+                </div>
+            {/* <NavUserBtn/> */}
             <form onSubmit={handleSubmit}>
              <input
             onChange={handleChange}
@@ -51,6 +52,6 @@ const [searching, setSearching] = useContext(StateContext).searching;
     </nav>
     </header>
      );
-}
- 
-export default NavBar;
+    }
+    
+    export default NavBar;

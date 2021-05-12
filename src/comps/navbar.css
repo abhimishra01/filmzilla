@@ -44,12 +44,18 @@ nav > p{
     font-family: cursive;
    
 }
-
+.nav__userBtn {
+    /* position:relative; */
+    width: 80px;
+    height: 40px;
+    font-size: 18px;
+    background-color: #DBDBE5;
+}
 .nav__keys > form > input:focus{
     outline:0;
 }
 
-.nav__keys > button{
+.nav__keys > NavUserMenu{
     width:80px;
     height:40px;
     font-size:18px;
