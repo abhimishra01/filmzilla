@@ -34,17 +34,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SingleLineGridList({movies}) {
+export default function SingleLineGridList({contentArray, tvShows}) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <GridList spacing={5} cellHeight={280} className={classes.gridList} cols={5.5}>
-        {movies && movies.map((tile) => (
+        {contentArray.map((tile) => (
           <GridListTile  key={tile.id}>
              <img src={tile.poster_path?IMAGE_API + tile.poster_path : DEFAULT_POSTER_Path} alt={tile.title} />
             <GridListTileBar
-              title={tile.title}
+              title={tvShows ? tile.name : tile.title}
               classes={{
                 root: classes.titleBar,
                 title: classes.title,
