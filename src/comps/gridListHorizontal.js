@@ -7,10 +7,10 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import {IMAGE_API, DEFAULT_POSTER_Path} from "../api/api";
 // import DEFAULT_POSTER_Path from '../api/api';
 import "./gridListhz.css";
+import TrendingToggleButton from './toggleBtn';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding:"2px 0px",
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#ffff",
     fontSize:"0.87rem",
     fontFamily:"Poppins, sans-serif",
-    fontWeight:"700",
+    fontWeight:"500",
     letterSpacing:"1px"
   },
   titleBar: {
@@ -38,8 +38,10 @@ export default function SingleLineGridList({contentArray, tvShows}) {
   const classes = useStyles();
 
   return (
+    <div className="trending_gridContainer">
+    <h2>{tvShows?"TV Shows" : "Movies"} Trending : <TrendingToggleButton/></h2>
     <div className={classes.root}>
-      <GridList spacing={5} cellHeight={280} className={classes.gridList} cols={5.5}>
+      <GridList spacing={3} cellHeight={250} className={classes.gridList} cols={5.5}>
         {contentArray.map((tile) => (
           <GridListTile  key={tile.id}>
              <img src={tile.poster_path?IMAGE_API + tile.poster_path : DEFAULT_POSTER_Path} alt={tile.title} />
@@ -54,10 +56,11 @@ export default function SingleLineGridList({contentArray, tvShows}) {
                   <StarBorderIcon className="star" />
                 </IconButton>
               }
-            />
+              />
           </GridListTile>
         ))}
       </GridList>
     </div>
+        </div>
   );
 }

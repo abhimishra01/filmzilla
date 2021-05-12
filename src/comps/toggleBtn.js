@@ -1,10 +1,14 @@
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
-import {useState} from "react";
+import {useState,useContext} from "react";
+import {StateContext} from "../context/stateProvider";
 import "./togglebtn.css";
+
 
 export default function TrendingToggleButton() {
   const [alignment, setAlignment] = useState("left");
+
+
 
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);

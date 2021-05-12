@@ -1,13 +1,18 @@
-.heading__trending {
+.trending_gridContainer {
+    /* margin:4px 0px; */
     border-radius:20px;
+    font-size:1.2rem;
     /* text-align: center; */
-    padding: 4px 10px;
+    padding: 4px;
     width: 100%;
     background-color: var(--secondary);
-    margin: 2.2rem 0.8rem;
+    margin-top: 1rem; 
+    margin-bottom:2rem;  
+    margin-right:300px;
+    margin-left:0px;
 }
 
-.heading__trending>h2 {
+.trending_gridContainer>h2 {
     margin: 10px;
     font-size:1.2rem;
     letter-spacing:2px;
