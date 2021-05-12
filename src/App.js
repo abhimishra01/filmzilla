@@ -5,6 +5,7 @@ import {useContext,useEffect} from "react";
 import TRENDING_API_MOVIES, { TRENDING_API_TVSHOWS } from "./api/api";
 import {StateContext,fetchData} from "./context/stateProvider";
 import FooterBar from './comps/footer';
+import LoginPage from './comps/login';
 
 function App() {
 
@@ -23,9 +24,10 @@ useEffect(()=>{
 
   return (
     <div className="App">
-      <NavBar fetchData={fetchData}/>
+      {/* <NavBar fetchData={fetchData}/>
       <MoviesPage />
-      <FooterBar/>
+      <FooterBar/> */}
+      <LoginPage/>
       </div>
   );
 }
