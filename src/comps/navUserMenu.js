@@ -78,9 +78,12 @@ const [user,setUser] = React.useContext(StateContext).user;
           aria-controls={open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
           onClick={handleToggle}
-          style={{borderRadius:"50%"}}
-        >
-          <img src={user.photoURL} alt="" />
+          >
+          <img 
+          style={{
+            objectFit:"contain",height:"8vh",borderRadius:"80%"
+        }}
+          src={user.photoURL} alt="" />
         </Button>
         <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (

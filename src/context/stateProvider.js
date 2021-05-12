@@ -33,6 +33,11 @@ export const StateContextProvider = (props) =>{
     // Search Result :
     const [searching_movies_result, setSearchingMoviesResult] = useState([]);
     const [searching_tvShows_result, setSearchingTvShowsResult] = useState([]);
+
+
+    // Bookmarks Array State 
+    const [bookmarks,setBookmarks] = useState([]);
+
     return (
         // We can use the value of user, wherever we want in the components which are inside of the StateContext.Provider
         <StateContext.Provider 
@@ -45,6 +50,7 @@ export const StateContextProvider = (props) =>{
             searching_movies_result:[searching_movies_result, setSearchingMoviesResult],
             searching_tvShows_result:[searching_tvShows_result, setSearchingTvShowsResult],
             searching: [searching, setSearching],
+            bookmarks:[bookmarks,setBookmarks],
             }}>
             {props.children}
         </StateContext.Provider>
