@@ -4,14 +4,12 @@ import NavBar from './comps/navbar';
 import {useContext,useEffect} from "react";
 import TRENDING_API_MOVIES, { TRENDING_API_TVSHOWS } from "./api/api";
 import {StateContext} from "./context/stateProvider";
-// import {StateContextProvider} from ""
-// import SingleLineGridList from "./comps/gridListHorizontal";
+
 function App() {
 
-
 // Declaring trending movies state and trending tv shows state fetched from context
-const [movies,setMovies] = useContext([StateContext]).movies_popular;
-const [tvShows, setTvShows] = useContext([StateContext]).tvShows.popular;
+const [movies,setMovies] = useContext(StateContext).movies_popular;
+const [tvShows, setTvShows] = useContext(StateContext).tvShows_popular;
 // const [user, setUser] = useContext([StateContext]).user;
 console.log(movies,tvShows);
 // Function to fetch movies from an api
