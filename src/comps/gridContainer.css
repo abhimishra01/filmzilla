@@ -1,6 +1,7 @@
 .heading__trending {
-    text-align: center;
-    /* padding: 4px 10px; */
+    border-radius:20px;
+    /* text-align: center; */
+    padding: 4px 10px;
     width: 100%;
     background-color: var(--secondary);
     margin-bottom: 0.5rem;
