@@ -23,7 +23,8 @@ paper: {
 export default function NavUserMenu() {
 
 // Fetching the user state from our context API layer :
-  const [user,setUser] = React.useContext(StateContext).user
+const [user,setUser] = React.useContext(StateContext).user;
+console.log(setUser);
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -72,9 +73,9 @@ export default function NavUserMenu() {
           aria-controls={open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
           onClick={handleToggle}
-          style={{paddingLeft:'10px'}}
+          style={{paddingLeft:'10px',height:"200px",borderRadius:"50%"}}
         >
-          User
+          <img src={user.photoURL} alt="" />
         </Button>
         <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (

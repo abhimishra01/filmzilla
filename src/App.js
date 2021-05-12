@@ -12,8 +12,12 @@ function App() {
 // Declaring trending movies state and trending tv shows state fetched from context
 const [movies,setMovies] = useContext(StateContext).movies_popular;
 const [tvShows, setTvShows] = useContext(StateContext).tvShows_popular;
+
+// Fetching the user state from our context API layer 
+const [user,setUser] = useContext(StateContext).user;
+console.log(setUser);
 console.log(movies,tvShows);
-// const [user, setUser] = useContext([StateContext]).user;
+
 
 useEffect(()=>{
     fetchData(TRENDING_API_TVSHOWS,setTvShows);
@@ -22,12 +26,14 @@ useEffect(()=>{
 },[setMovies,setTvShows])
 
 
+if(!user){
+  return <LoginPage/>
+}
   return (
     <div className="App">
-      {/* <NavBar fetchData={fetchData}/>
+      <NavBar fetchData={fetchData}/>
       <MoviesPage />
-      <FooterBar/> */}
-      <LoginPage/>
+      <FooterBar/>
       </div>
   );
 }
