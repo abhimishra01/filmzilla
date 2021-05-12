@@ -2,6 +2,20 @@ import {createContext, useState} from "react";
 
 export const StateContext = createContext();
 
+// Function to fetch movies from an api
+export const fetchData = async(api,setter) =>{
+    await fetch(api).then(res=>{
+        if(!res.ok){
+            alert("Something Went Wrong !");
+        }
+        return res.json();
+    }).then(data=>{
+        setter([data.results]);
+        // console.log(data.results);
+    }).catch(err=>alert(err.message));
+}
+
+
 export const StateContextProvider = (props) =>{
     
     // For Auth

@@ -3,7 +3,7 @@ import MoviesPage from './comps/moviespage';
 import NavBar from './comps/navbar';
 import {useContext,useEffect} from "react";
 import TRENDING_API_MOVIES, { TRENDING_API_TVSHOWS } from "./api/api";
-import {StateContext} from "./context/stateProvider";
+import {StateContext,fetchData} from "./context/stateProvider";
 
 function App() {
 
@@ -12,19 +12,6 @@ const [movies,setMovies] = useContext(StateContext).movies_popular;
 const [tvShows, setTvShows] = useContext(StateContext).tvShows_popular;
 console.log(movies,tvShows);
 // const [user, setUser] = useContext([StateContext]).user;
-
-// Function to fetch movies from an api
-const fetchData = async(api,setter) =>{
-    await fetch(api).then(res=>{
-        if(!res.ok){
-            alert("Something Went Wrong !");
-        }
-        return res.json();
-    }).then(data=>{
-        setter([data.results]);
-        // console.log(data.results);
-    }).catch(err=>alert(err.message));
-}
 
 useEffect(()=>{
     fetchData(TRENDING_API_TVSHOWS,setTvShows);
