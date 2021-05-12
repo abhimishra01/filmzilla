@@ -1,5 +1,6 @@
 footer {
-    height:13vh;
+    width:98vw;
+    height:12vh;
     padding: 16px 1.6rem;
     color: var(--primary-heading);
     display: flex;
