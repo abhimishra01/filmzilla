@@ -10,7 +10,6 @@ const NavBar = ({fetchData}) => {
     const handleSubmit =(e)=>{
         e.preventDefault();
         fetchData(SEARCH_API + searchValue,setSearchingMoviesResult);
-        setsearchValue("");
     }
     const handleSearch =()=>{}
     const handleChange = (e) => {
