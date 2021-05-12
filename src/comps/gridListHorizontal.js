@@ -5,9 +5,8 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import {IMAGE_API, DEFAULT_POSTER_Path} from "../api/api";
-// import DEFAULT_POSTER_Path from '../api/api';
 import "./gridListhz.css";
-import TrendingToggleButton from './toggleBtn';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,7 +38,7 @@ export default function SingleLineGridList({contentArray, tvShows}) {
 
   return (
     <div className="trending_gridContainer">
-    <h2>{tvShows?"TV Shows" : "Movies"} Trending : <TrendingToggleButton/></h2>
+    <h2>{tvShows?"TV Shows" : "Movies"} Trending : <TrendingToggleButton tvShow={tvShows?tvShows:null}/></h2>
     <div className={classes.root}>
       <GridList spacing={3} cellHeight={250} className={classes.gridList} cols={5.5}>
         {contentArray.map((tile) => (
