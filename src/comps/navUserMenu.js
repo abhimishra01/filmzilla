@@ -24,7 +24,7 @@ export default function NavUserMenu() {
 
 // Fetching the user state from our context API layer :
 const [user,setUser] = React.useContext(StateContext).user;
-console.log(setUser);
+
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -43,8 +43,13 @@ console.log(setUser);
   };
 
 
-  const handleLogout = () => {
-      auth.signOut();
+  const handleLogout = async() => {
+    try{
+      await auth.signOut()
+      setUser(null);
+    } catch(err){
+       alert(err.message);
+     } 
   }
 
   function handleListKeyDown(event) {
@@ -73,7 +78,7 @@ console.log(setUser);
           aria-controls={open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
           onClick={handleToggle}
-          style={{paddingLeft:'10px',height:"200px",borderRadius:"50%"}}
+          style={{borderRadius:"50%"}}
         >
           <img src={user.photoURL} alt="" />
         </Button>
