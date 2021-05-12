@@ -4,7 +4,7 @@ import NavBar from './comps/navbar';
 import {useContext,useEffect} from "react";
 import TRENDING_API_MOVIES, { TRENDING_API_TVSHOWS } from "./api/api";
 import {StateContext} from "./context/stateProvider";
-
+// import {StateContextProvider} from ""
 // import SingleLineGridList from "./comps/gridListHorizontal";
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
 const [movies,setMovies] = useContext([StateContext]).movies_popular;
 const [tvShows, setTvShows] = useContext([StateContext]).tvShows.popular;
 // const [user, setUser] = useContext([StateContext]).user;
-
+console.log(movies,tvShows);
 // Function to fetch movies from an api
 const fetchData = async(api,setter) =>{
     await fetch(api).then(res=>{
@@ -30,7 +30,7 @@ const fetchData = async(api,setter) =>{
 useEffect(()=>{
     fetchData(TRENDING_API_MOVIES,setMovies);
     fetchData(TRENDING_API_TVSHOWS,setTvShows);
-},[])
+},[setMovies,setTvShows])
 
 
   return (

@@ -2,16 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {StateProvider} from "./context/stateProvider";
-import reducer, {initialState} from "./context/reducer";
+import {StateContextProvider} from "./context/stateProvider";
 
 ReactDOM.render(
   <React.StrictMode>
-    <StateProvider
-    reducer={reducer}
-    initialState={initialState}>
+    <StateContextProvider>
     <App />
-    </StateProvider>
+    </StateContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
