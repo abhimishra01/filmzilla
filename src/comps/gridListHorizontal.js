@@ -10,7 +10,7 @@ import "./gridListhz.css";
 import TrendingToggleButton from './toggleBtn';
 import BookmarkBorderTwoToneIcon from '@material-ui/icons/BookmarkBorderTwoTone';
 import {StateContext} from "../context/stateProvider";                  
-import fireStore from "../keys/firebaseConfig";
+import fireStore,{timestamp} from "../keys/firebaseConfig";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,6 +67,7 @@ export default function SingleLineGridList({contentArray, tvShows}) {
         overview:overview,
         poster_path:poster_path,
         vote_average:vote_average,
+        timestamp:timestamp,
       });
     }
     else{
@@ -75,6 +76,7 @@ export default function SingleLineGridList({contentArray, tvShows}) {
         overview:overview,
         poster_path:poster_path,
         vote_average:vote_average,
+        timestamp:timestamp,
       });
     }
   }
