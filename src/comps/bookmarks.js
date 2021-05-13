@@ -7,8 +7,6 @@ const Bookmarks = () => {
 
     const collectionName = useParams().content;
     const {inProgress,contentArray} = useFireStore(collectionName);
-
-    console.log(inProgress);
     const checkTvShow = () =>{
         if(collectionName === "tv_shows"){
             return true;
@@ -18,7 +16,7 @@ const Bookmarks = () => {
         }
     }
 
-    if(inProgress == false && contentArray.length == 0){
+    if(inProgress === false && contentArray.length === 0){
         return ( <div className="no__bookmarks">
             <h2>No Bookmarks yet !</h2>
              </div>)
