@@ -17,9 +17,15 @@ const Bookmarks = () => {
             return null;
         }
     }
+
+    if(inProgress == false && contentArray.length == 0){
+        return ( <div className="no__bookmarks">
+            <h2>No Bookmarks yet !</h2>
+             </div>)
+    }
     return ( <div className="movies__page">
-        {inProgress &&  <CircularProgress/> }
-        <MovieCard contentArray={contentArray} tvShow={checkTvShow} bookmark={true}/>
+        {inProgress &&  <CircularProgress className="circular__progress"/> }
+      {contentArray.length > 0 &&  <MovieCard contentArray={contentArray} tvShow={checkTvShow} bookmark={true}/> }
     </div>
     );
 }
