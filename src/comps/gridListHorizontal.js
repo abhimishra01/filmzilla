@@ -1,4 +1,4 @@
-// import {useContext} from "react";
+import {useContext} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
@@ -9,8 +9,8 @@ import {IMAGE_API, DEFAULT_POSTER_Path} from "../api/api";
 import "./gridListhz.css";
 import TrendingToggleButton from './toggleBtn';
 import BookmarkBorderTwoToneIcon from '@material-ui/icons/BookmarkBorderTwoTone';
-// import {StateContext} from "../context/stateProvider";                  
-
+import {StateContext} from "../context/stateProvider";                  
+import fireStore from "../keys/firebaseConfig";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,8 +45,12 @@ const useStyles = makeStyles((theme) => ({
 export default function SingleLineGridList({contentArray, tvShows}) {
   const classes = useStyles();
 
-  // const [bookmarks,setBookmarks] = useContext(StateContext).bookmarks
+  const [user,setUser] = useContext(StateContext).user
+  console.log(setUser);
+  // console.clear();
   
+  const databaseRef = fireStore.collection(user.email);
+
   const showMovieBookmarks = () =>{
     console.log("Movie")
   }
@@ -54,6 +58,30 @@ export default function SingleLineGridList({contentArray, tvShows}) {
   const showTvBookmarks =()=>{
     console.log("TV")
   }
+
+  const addBookmark = ({title,overview,poster_path,vote_average})=>{
+    
+    if(tvShows){
+      databaseRef.doc("bookmarks").collection("tv_shows").add({
+        title:title,
+        overview:overview,
+        poster_path:poster_path,
+        vote_average:vote_average,
+      });
+    }
+    else{
+      databaseRef.doc("bookmarks").collection("movies").add({
+        title:title,
+        overview:overview,
+        poster_path:poster_path,
+        vote_average:vote_average,
+      });
+    }
+  }
+
+  // const addBookmarkMovie = ({title,overview,poster_path,vote_average}) =>{
+   
+  // }
 
   return (
     <div className="trending_gridContainer">
@@ -77,7 +105,7 @@ export default function SingleLineGridList({contentArray, tvShows}) {
               }}
               
               actionIcon={
-                <IconButton  aria-label={`star ${tile.title}`}>
+                <IconButton onClick={()=> addBookmark({title : tvShows ? tile.name: tile.title,overview:tile.overview,vote_average:tile.vote_average,poster_path:tile.poster_path})} aria-label={`star ${tile.title}`}>
                 <span class={classes.rating}>{tile.vote_average}</span>    <StarBorderIcon className="star" />
                 </IconButton>
               }
