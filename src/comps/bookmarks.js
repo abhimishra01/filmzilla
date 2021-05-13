@@ -29,7 +29,7 @@ const Bookmarks = () => {
              </div>)
     }
 
-    return ( <div className="movies__page">
+    return ( <div className="bookmarks__page">
         {inProgress &&  <div className="loading"><CircularProgress className="circular__progress"/> 
         </div> }
       {contentArray.length > 0 &&  <MovieCard contentArray={contentArray} tvShow={checkTvShow} bookmark={true}/> }
