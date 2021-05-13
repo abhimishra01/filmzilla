@@ -101,7 +101,7 @@ export default function SingleLineGridList({contentArray, tvShows}) {
               
               actionIcon={
                 <IconButton onClick={()=> addBookmark({title : tvShows ? tile.name: tile.title,overview:tile.overview,vote_average:tile.vote_average,poster_path:tile.poster_path})} aria-label={`star ${tile.title}`}>
-                <span class={classes.rating}>{tile.vote_average}</span>    <StarBorderIcon className="star" />
+                <span className=".rating">{tile.vote_average}</span>    <StarBorderIcon className="star" />
                 </IconButton>
               }
               />
