@@ -6,17 +6,9 @@ import {useParams} from "react-router-dom";
 const Bookmarks = () => {
 
     const collectionName = useParams().content;
-    console.clear();
-    // console.log(collectionName); 
-    const {isProgress,contentArray,error} = useFireStore(collectionName);
-    
-    if(error){
-        alert(error.message);
-    }
-    if(isProgress){
-    return <CircularProgress/>
-    }
-    
+    const {inProgress,contentArray} = useFireStore(collectionName);
+
+    console.log(inProgress);
     const checkTvShow = () =>{
         if(collectionName === "tv_shows"){
             return true;
@@ -26,7 +18,8 @@ const Bookmarks = () => {
         }
     }
     return ( <div className="movies__page">
-        <MovieCard contentArray={contentArray} tvShow={checkTvShow}/>
+        {inProgress &&  <CircularProgress/> }
+        <MovieCard contentArray={contentArray} tvShow={checkTvShow} bookmark={true}/>
     </div>
     );
 }
