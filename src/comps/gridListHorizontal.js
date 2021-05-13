@@ -11,6 +11,7 @@ import TrendingToggleButton from './toggleBtn';
 import BookmarkBorderTwoToneIcon from '@material-ui/icons/BookmarkBorderTwoTone';
 import {StateContext} from "../context/stateProvider";                  
 import fireStore,{timestamp} from "../keys/firebaseConfig";
+import {Link} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,13 +52,6 @@ export default function SingleLineGridList({contentArray, tvShows}) {
   
   const databaseRef = fireStore.collection(user.email);
 
-  const showMovieBookmarks = () =>{
-    console.log("Movie")
-  }
-
-  const showTvBookmarks =()=>{
-    console.log("TV")
-  }
 
   const addBookmark = ({title,overview,poster_path,vote_average})=>{
     
@@ -81,18 +75,17 @@ export default function SingleLineGridList({contentArray, tvShows}) {
     }
   }
 
-  // const addBookmarkMovie = ({title,overview,poster_path,vote_average}) =>{
-   
-  // }
 
   return (
     <div className="trending_gridContainer">
       <div className="trending_gridContainerHead">
           <h2>{tvShows?"TV Shows" : "Movies"} Trending : <TrendingToggleButton tvShow={tvShows?tvShows:null}/>
           </h2>
-        <IconButton onClick={tvShows?showTvBookmarks:showMovieBookmarks}>
+          <Link to={`/bookmarks/${tvShows?"tv_shows":"movies"}`}>
+        <IconButton>
             <BookmarkBorderTwoToneIcon className="bookmark__iconBtn" fontSize={"large"}/>
         </IconButton>
+          </Link>
       </div>
     <div className={classes.root}>
       <GridList spacing={3} cellHeight={250} className={classes.gridList} cols={5.5}>

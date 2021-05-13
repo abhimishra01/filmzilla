@@ -37,10 +37,10 @@ if(!user){
       <Router>
       <NavBar fetchData={fetchData}/>
     <Switch>
-      <Route path="/">
+      <Route  exact path="/">
       <MoviesPage />
       </Route>
-      <Route path="/bookmarks">
+      <Route  path="/bookmarks/:content">
       <Bookmarks />
       </Route>
     </Switch>
