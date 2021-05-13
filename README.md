@@ -4,6 +4,13 @@
 <!-- ### The Movie Database (TMDB) APIused
 - [[The Movie Database]](http://themoviedb.org/r) -->
 
+
+## Features :
+- Fetch  Treding Movies & TV Shows by weekly or daily basis
+- Search Popular Movies
+- Add Bookmarks (Stored into Firestore)
+- User Authentication with Google via firebase as backend
+
 ## Tech Stack Used :
 -   React js
 -   Firebase Google Authentication
