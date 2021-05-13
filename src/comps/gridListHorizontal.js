@@ -4,7 +4,6 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
 import {IMAGE_API, DEFAULT_POSTER_Path} from "../api/api";
 import "./gridListhz.css";
 import TrendingToggleButton from './toggleBtn';
@@ -90,6 +89,7 @@ export default function SingleLineGridList({contentArray, tvShows}) {
     <div className={classes.root}>
       <GridList spacing={3} cellHeight={250} className={classes.gridList} cols={5.5}>
         {contentArray.map((tile) => (
+        
           <GridListTile  key={tile.id}>
              <img src={tile.poster_path?IMAGE_API + tile.poster_path : DEFAULT_POSTER_Path} alt={tile.title} />
             <GridListTileBar
@@ -98,10 +98,10 @@ export default function SingleLineGridList({contentArray, tvShows}) {
                 root: classes.titleBar,
                 title: classes.title,
               }}
-              
+              subtitle={tile.vote_average}
               actionIcon={
                 <IconButton onClick={()=> addBookmark({title : tvShows ? tile.name: tile.title,overview:tile.overview,vote_average:tile.vote_average,poster_path:tile.poster_path})} aria-label={`star ${tile.title}`}>
-                <span class={classes.rating}>{tile.vote_average}</span>    <StarBorderIcon className="star" />
+                  <BookmarkBorderTwoToneIcon className="star" fontSize={"default"}/>
                 </IconButton>
               }
               />

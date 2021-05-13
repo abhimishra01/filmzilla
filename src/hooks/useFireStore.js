@@ -5,15 +5,11 @@ import {StateContext} from "../context/stateProvider";
 const useFireStore = (collectionName) => {
     const [contentArray, setContentArray] = useState([]);
     const [inProgress, setinProgress] = useState(true);
-    const [error, setError] = useState(null);
     const [user,setUser] = useContext(StateContext).user;
-    console.log(collectionName);
     console.log(setUser);
 
-    
-    const databaseRef = fireStore.collection(user.email).doc("bookmarks").collection(collectionName);
     useEffect(()=>{
-        try{
+        const databaseRef = fireStore.collection(user.email).doc("bookmarks").collection(collectionName);
             const unsubscribe = databaseRef.orderBy("timestamp")
             .onSnapshot(snapshot=>{
                 let doc = [];
@@ -23,13 +19,11 @@ const useFireStore = (collectionName) => {
                 setContentArray(doc);
                 setinProgress(false);
             })
-        return ()=>unsubscribe();
-    }catch(error){
-            setError(error);
-    }
-    },[collectionName,databaseRef]);
+            return ()=>unsubscribe();
+    },[user.email,collectionName]);
 
-    return {inProgress,contentArray,error};
+    console.log(inProgress);
+    return {inProgress,contentArray};
 }
  
 export default useFireStore;
