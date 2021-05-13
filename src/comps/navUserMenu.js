@@ -9,7 +9,7 @@ import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import {StateContext} from "../context/stateProvider";
 import {auth} from "../keys/firebaseConfig";
-
+import {useHistory} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,6 +42,10 @@ const [user,setUser] = React.useContext(StateContext).user;
     setOpen(false);
   };
 
+  const history = useHistory();
+  const handleHome = () =>{
+    history.push("/");
+  }
 
   const handleLogout = async() => {
     try{
@@ -94,8 +98,7 @@ const [user,setUser] = React.useContext(StateContext).user;
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    {/* <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem> */}
+                    <MenuItem onClick={handleHome}>Home</MenuItem>
                     <MenuItem onClick={handleLogout} >Logout</MenuItem>
                   </MenuList>
                 </ClickAwayListener>

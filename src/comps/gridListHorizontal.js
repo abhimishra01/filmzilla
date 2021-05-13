@@ -1,4 +1,4 @@
-// import {useContext} from "react";
+import {useContext} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
@@ -9,8 +9,9 @@ import {IMAGE_API, DEFAULT_POSTER_Path} from "../api/api";
 import "./gridListhz.css";
 import TrendingToggleButton from './toggleBtn';
 import BookmarkBorderTwoToneIcon from '@material-ui/icons/BookmarkBorderTwoTone';
-// import {StateContext} from "../context/stateProvider";                  
-
+import {StateContext} from "../context/stateProvider";                  
+import fireStore,{timestamp} from "../keys/firebaseConfig";
+import {Link} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,24 +46,46 @@ const useStyles = makeStyles((theme) => ({
 export default function SingleLineGridList({contentArray, tvShows}) {
   const classes = useStyles();
 
-  // const [bookmarks,setBookmarks] = useContext(StateContext).bookmarks
+  const [user,setUser] = useContext(StateContext).user
+  console.log(setUser);
+  // console.clear();
   
-  const showMovieBookmarks = () =>{
-    console.log("Movie")
+  const databaseRef = fireStore.collection(user.email);
+
+
+  const addBookmark = ({title,overview,poster_path,vote_average})=>{
+    
+    if(tvShows){
+      databaseRef.doc("bookmarks").collection("tv_shows").add({
+        title:title,
+        overview:overview,
+        poster_path:poster_path,
+        vote_average:vote_average,
+        timestamp:timestamp,
+      });
+    }
+    else{
+      databaseRef.doc("bookmarks").collection("movies").add({
+        title:title,
+        overview:overview,
+        poster_path:poster_path,
+        vote_average:vote_average,
+        timestamp:timestamp,
+      });
+    }
   }
 
-  const showTvBookmarks =()=>{
-    console.log("TV")
-  }
 
   return (
     <div className="trending_gridContainer">
       <div className="trending_gridContainerHead">
           <h2>{tvShows?"TV Shows" : "Movies"} Trending : <TrendingToggleButton tvShow={tvShows?tvShows:null}/>
           </h2>
-        <IconButton onClick={tvShows?showTvBookmarks:showMovieBookmarks}>
+          <Link to={`/bookmarks/${tvShows?"tv_shows":"movies"}`}>
+        <IconButton>
             <BookmarkBorderTwoToneIcon className="bookmark__iconBtn" fontSize={"large"}/>
         </IconButton>
+          </Link>
       </div>
     <div className={classes.root}>
       <GridList spacing={3} cellHeight={250} className={classes.gridList} cols={5.5}>
@@ -77,7 +100,7 @@ export default function SingleLineGridList({contentArray, tvShows}) {
               }}
               
               actionIcon={
-                <IconButton  aria-label={`star ${tile.title}`}>
+                <IconButton onClick={()=> addBookmark({title : tvShows ? tile.name: tile.title,overview:tile.overview,vote_average:tile.vote_average,poster_path:tile.poster_path})} aria-label={`star ${tile.title}`}>
                 <span class={classes.rating}>{tile.vote_average}</span>    <StarBorderIcon className="star" />
                 </IconButton>
               }

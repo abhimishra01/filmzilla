@@ -6,6 +6,9 @@ import TRENDING_API_MOVIES, { TRENDING_API_TVSHOWS } from "./api/api";
 import {StateContext,fetchData} from "./context/stateProvider";
 import FooterBar from './comps/footer';
 import LoginPage from './comps/login';
+import {BrowserRouter as Router , Switch, Route} from "react-router-dom";
+import Bookmarks from './comps/bookmarks';
+
 
 function App() {
 
@@ -31,9 +34,18 @@ if(!user){
 }
   return (
     <div className="App">
+      <Router>
       <NavBar fetchData={fetchData}/>
+    <Switch>
+      <Route  exact path="/">
       <MoviesPage />
+      </Route>
+      <Route  path="/bookmarks/:content">
+      <Bookmarks />
+      </Route>
+    </Switch>
       <FooterBar/>
+      </Router>
       </div>
   );
 }
