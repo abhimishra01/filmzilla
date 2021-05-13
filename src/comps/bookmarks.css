@@ -1,0 +1,38 @@
+.no__bookmarks,.loading {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.no__bookmarks>h2 {
+    height: 20vh;
+    width:25vw;
+    display: flex;
+    flex-wrap:nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--secondary);
+    border-radius: 20px;
+    color: var(--primary);
+    box-shadow: 3px 3px 8px 5px rgba(0, 0, 0, 0.267);
+    transition:box-shadow 0.4s;
+}
+.no__bookmarks>h2:hover{
+        box-shadow: 3px 3px 8px 5px rgba(0, 0, 0, 0.4);
+}
+.no__bookmarks>h2>Button {
+    margin-top:30px;
+    padding:12px;
+    background-color:var(--primary);
+    font-family: 'Exo',
+    sans-serif;
+    border-radius: 20px;
+}
+
+.no__bookmarks>h2>Button:hover {
+    background-color:#9797ad;
+}
