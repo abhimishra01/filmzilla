@@ -11,6 +11,7 @@ import BookmarkBorderTwoToneIcon from '@material-ui/icons/BookmarkBorderTwoTone'
 import {StateContext} from "../context/stateProvider";                  
 import fireStore,{timestamp} from "../keys/firebaseConfig";
 import {Link} from "react-router-dom";
+import { CircularProgress } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -86,10 +87,10 @@ export default function SingleLineGridList({contentArray, tvShows}) {
         </IconButton>
           </Link>
       </div>
-    <div className={classes.root}>
+      {  contentArray.length > 0 ? <div className={classes.root}>
       <GridList spacing={3} cellHeight={250} className={classes.gridList} cols={5.5}>
         {contentArray.map((tile) => (
-        
+          
           <GridListTile  key={tile.id}>
              <img src={tile.poster_path?IMAGE_API + tile.poster_path : DEFAULT_POSTER_Path} alt={tile.title} />
             <GridListTileBar
@@ -108,7 +109,10 @@ export default function SingleLineGridList({contentArray, tvShows}) {
           </GridListTile>
         ))}
       </GridList>
-    </div>
+    </div>:  <div className="progress">
+        <CircularProgress className="circular_progress"/>
+      </div>
+    }
         </div>
   );
 }
