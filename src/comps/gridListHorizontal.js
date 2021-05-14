@@ -53,7 +53,6 @@ export default function SingleLineGridList({contentArray, tvShows}) {
 
 
   const addBookmark = ({title,overview,poster_path,vote_average})=>{
-    
     if(tvShows){
       databaseRef.doc("bookmarks").collection("tv_shows").add({
         title:title,
@@ -72,6 +71,7 @@ export default function SingleLineGridList({contentArray, tvShows}) {
         timestamp:timestamp,
       });
     }
+    alert("Added to bookmarks!");
   }
 
 
