@@ -8,6 +8,7 @@ import FooterBar from './comps/footer';
 import LoginPage from './comps/login';
 import {BrowserRouter as Router , Switch, Route} from "react-router-dom";
 import Bookmarks from './comps/bookmarks';
+import MovieClicked from './comps/movieClicked';
 
 
 function App() {
@@ -39,6 +40,9 @@ if(!user){
     <Switch>
       <Route  exact path="/">
       <MoviesPage />
+      </Route>
+      <Route exact path="/:id/contentType">
+      <MovieClicked/>
       </Route>
       <Route  path="/bookmarks/:content">
       <Bookmarks />
