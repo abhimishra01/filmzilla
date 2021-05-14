@@ -46,7 +46,7 @@ const [searching, setSearching] = useContext(StateContext).searching;
             <form onSubmit={handleSubmit}>
              <input
             onChange={handleChange}
-            type="search" placeholder="Search..."/>
+            type="search" placeholder="Search Movies or Shows.."/>
             </form>
         </div>
     </nav>
