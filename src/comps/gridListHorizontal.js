@@ -75,7 +75,6 @@ export default function SingleLineGridList({contentArray, tvShows}) {
     alert("Added to bookmarks!");
   }
 
-
   return (
     <div className="trending_gridContainer">
       <div className="trending_gridContainerHead">
@@ -89,10 +88,11 @@ export default function SingleLineGridList({contentArray, tvShows}) {
       </div>
       {  contentArray.length > 0 ? <div className={classes.root}>
       <GridList spacing={3} cellHeight={250} className={classes.gridList} cols={5.5}>
-        {contentArray.map((tile) => (
-          
-          <GridListTile  key={tile.id}>
-             <img src={tile.poster_path?IMAGE_API + tile.poster_path : DEFAULT_POSTER_Path} alt={tile.title} />
+        {contentArray.map((tile) => {
+          return  <GridListTile  key={tile.id}>
+              <img src={tile.poster_path?IMAGE_API + tile.poster_path : DEFAULT_POSTER_Path} alt={tile.title} />
+              {/* <Link to={`/${tile.id}/${tvShows?"tv_Shows":"movies"}`}>
+              </Link> */}
             <GridListTileBar
               title={tvShows ? tile.name : tile.title}
               classes={{
@@ -100,14 +100,14 @@ export default function SingleLineGridList({contentArray, tvShows}) {
                 title: classes.title,
               }}
               subtitle={tile.vote_average}
-              actionIcon={
+              actionIcon={     
                 <IconButton onClick={()=> addBookmark({title : tvShows ? tile.name: tile.title,overview:tile.overview,vote_average:tile.vote_average,poster_path:tile.poster_path})} aria-label={`star ${tile.title}`}>
-                  <BookmarkBorderTwoToneIcon className="star" fontSize={"default"}/>
-                </IconButton>
-              }
-              />
+          <BookmarkBorderTwoToneIcon className="star" fontSize={"default"}/>
+          </IconButton>
+             }
+             />
           </GridListTile>
-        ))}
+            })}
       </GridList>
     </div>:  <div className="progress">
         <CircularProgress className="circular_progress"/>

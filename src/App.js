@@ -41,7 +41,7 @@ if(!user){
       <Route  exact path="/">
       <MoviesPage />
       </Route>
-      <Route path="/movieinfo/:movieid">
+      <Route exact path="/:id/contentType">
       <MovieClicked/>
       </Route>
       <Route  path="/bookmarks/:content">

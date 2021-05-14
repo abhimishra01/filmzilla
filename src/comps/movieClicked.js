@@ -5,29 +5,34 @@ import "./movieclicked.css";
 import {useParams} from "react-router-dom";
 import { IMAGE_API, DEFAULT_POSTER_Path} from "../api/api";
 
-const movie_id = null;
-const SEARCH_PARTICULAR_MOVIE_API = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=d7eb245562d608898cbbab8c823d0259&language=en-US`;
 const MovieClicked = () => {
 
-movie_id = useParams();
+    const {id,contentType} = useParams();
+    console.log(id,contentType);
+    const [movieinfo, setMovieinfo] = useState([]);
 
-const [movieinfo, setMovieinfo] = useState([]);
+    const SEARCH_PARTICULAR_MOVIE_API = `https://api.themoviedb.org/3/movie/${id}?api_key=d7eb245562d608898cbbab8c823d0259&language=en-US`;
 
-useEffect(() => {
-    fetchData(SEARCH_PARTICULAR_MOVIE_API, setMovieinfo);
-},[SEARCH_PARTICULAR_MOVIE_API]);
+    const SEARCH_PARTICULAR_TV_API = `https://api.themoviedb.org/3/tv/${id}?api_key=d7eb245562d608898cbbab8c823d0259&language=en-US`;
 
-const movie_data = movieinfo[0];
-const poster_path = movie_data.poster_path;
-const movie_title = movie_data.title;
-const overview = movie_data.overview;
-const rating = movie_data.vote_average;
-const tagline = movie_data.tagline;
-const status = movie_data.status;
-// const homepage = movie_data.homepage;
-const release_date = movie_data.release_date;
 
-console.log(movie_data.poster_path);
+    useEffect(() => {
+        fetchData(contentType === "movies" ? SEARCH_PARTICULAR_MOVIE_API: SEARCH_PARTICULAR_TV_API, setMovieinfo);
+    },[SEARCH_PARTICULAR_MOVIE_API,SEARCH_PARTICULAR_TV_API,contentType]);
+
+
+    console.log(movieinfo);
+    const movie_data = movieinfo[0];
+    const poster_path = movie_data.poster_path;
+    const movie_title = movie_data.title;
+    const overview = movie_data.overview;
+    const rating = movie_data.vote_average;
+    const tagline = movie_data.tagline;
+    const status = movie_data.status;
+    // const homepage = movie_data.homepage;
+    const release_date = movie_data.release_date;
+
+    console.log(movie_data.poster_path);
     return ( 
         <div className="movie__clicked">
         {movieinfo.length > 0 || <CircularProgress/>}
