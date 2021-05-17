@@ -15,7 +15,7 @@
 }
 
 .trending_gridContainerHead>h2 {
-    margin: 6px 8px;
+    margin: 6px 10px;
     font-size:1.4rem;
     letter-spacing:2px;
     color: var(--primary-heading);
@@ -23,17 +23,13 @@
 }
 
 
-@media screen and (max-width:745px){
-    .trending_gridContainer {
-        margin-right:-8px;
-    }
-}
+
 
 @media screen and (max-width:600px) {
     .trending_gridContainer {
         border-radius: 20px;
         font-size: 1.2rem;
-        margin-right: -18px;
+        margin-left: 2rem;
     }
     .trending_gridContainerHead {
         display: flex;
@@ -44,41 +40,63 @@
 
     .trending_gridContainerHead>h2 {
         margin: 2px auto;
-        font-size: 1.2rem;
-        letter-spacing: 5px;
-        color: var(--primary-heading);
-        font-family: Poppins, sans-serif;
     }
-    .trending_gridContainerHead>TrendingToggleButton {
-        font-size:12px;
-        padding:10px;
+
+}
+@media screen and (max-width:527px) {
+    .trending_gridContainer {
+        border-radius: 20px;
     }
+
+    .trending_gridContainerHead {
+        display: flex;
+        text-align: center;
+        /* justify-content: center; */
+        align-items: center;
+    }
+
+    .trending_gridContainerHead>h2 {
+        font-size: 1.1rem;
+        letter-spacing: 4px;
+    }
+
 }
 
-
-@media screen and (max-width:375px) {
+@media screen and (max-width:460px) {
     .trending_gridContainer {
-        /* font-size: 0.8rem; */
-        margin-left: 20px;
+        border-radius: 20px;
     }
 
     .trending_gridContainerHead {
         display: flex;
         text-align: center;
-        /* justify-content: center; */
         align-items: center;
     }
 
     .trending_gridContainerHead>h2 {
-        margin: 2px auto;
-        font-size: 1.2rem;
-        letter-spacing: 5px;
-        color: var(--primary-heading);
-        font-family: Poppins, sans-serif;
+        margin-left:20px;
+        font-size: 0.6rem;
+        letter-spacing: 4px;
+        margin-top:0.8rem;
+        margin-bottom:0.8rem;
     }
 
-    .trending_gridContainerHead>TrendingToggleButton {
-        font-size: 12px;
-        padding: 10px;
+}
+
+@media screen and (max-width:375px) {
+    /* .trending_gridContainer {
+        margin-left: 20px;
+    } */
+
+    .trending_gridContainerHead {
+        display: flex;
+        text-align: center;
+        align-items: center;
+    }
+
+    .trending_gridContainerHead>h2 {
+        margin-left: 25px;
+        font-size: 0.4rem;
+        letter-spacing: 2px;
     }
 }

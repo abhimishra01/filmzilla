@@ -12,7 +12,6 @@ import { StateContext } from "../context/stateProvider";
 import fireStore, { timestamp } from "../keys/firebaseConfig";
 import { Link } from "react-router-dom";
 import { CircularProgress } from "@material-ui/core";
-import { isWidthUp } from "@material-ui/core/withWidth";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -81,22 +80,6 @@ export default function SingleLineGridList(props) {
     alert("Added to bookmarks!");
   };
 
-  // For responsieness of gridList
-  const getGridListCols = () => {
-    if (isWidthUp("xl", props.width)) {
-      return 6;
-    }
-
-    if (isWidthUp("lg", props.width)) {
-      return 3.5;
-    }
-
-    if (isWidthUp("md", props.width)) {
-      return 4;
-    }
-
-    return 2;
-  };
   return (
     <div className="trending_gridContainer">
       <div className="trending_gridContainerHead">
@@ -115,13 +98,7 @@ export default function SingleLineGridList(props) {
       </div>
       {props.contentArray.length > 0 ? (
         <div className={classes.root}>
-          <GridList
-            spacing={3}
-            cellHeight={300}
-            className={classes.gridList}
-            // cols={getGridListCols()}
-            // cols="auto"
-          >
+          <GridList spacing={2} cellHeight={270} className={classes.gridList}>
             {props.contentArray.map((tile) => {
               return (
                 <GridListTile key={tile.id}>
