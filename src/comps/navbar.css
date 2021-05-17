@@ -19,7 +19,7 @@ header > nav{
 }
 
 nav>h1 {
-    font-family: 'Exo', sans-serif;
+/* font-family: 'Exo', sans-serif; */
     letter-spacing:10px;
     font-size:2rem;
 }
