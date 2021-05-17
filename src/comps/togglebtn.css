@@ -1,7 +1,63 @@
-.toggle__btn{
-    /* padding:4px; */
+.MuiToggleButton-root{
+    width:100px;
+    padding:0
 }
 
-.toggle__btnValue{
+.MuiToggleButton-label {
+color: var(--secondary);
+font-size: 0.8rem;
+font-family: Rubik, sans-serif;
+}
 
+
+
+@media screen and (max-width:850px){
+.MuiToggleButton-root {
+    width: 85px;
+}
+
+.MuiToggleButton-label {
+    font-size: 0.7rem;
+}
+}
+
+@media screen and (max-width:650px) {
+.MuiToggleButton-root {
+    width: 80px;
+}
+
+.MuiToggleButton-label {
+    font-size: 0.7rem;
+}
+}
+
+@media screen and (max-width:550px) {
+    .MuiToggleButton-root {
+        width: 65px;
+    }
+
+    .MuiToggleButton-label {
+        font-size: 0.6rem;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .MuiToggleButton-root {
+        /* width: 60px; */
+    }
+
+    .MuiToggleButton-label {
+        font-size: 0.52rem;
+    }
+}
+
+
+@media screen and (max-width:400px) {
+    .MuiToggleButton-root {
+        width: 58px;
+    }
+
+    .MuiToggleButton-label {
+        font-size: 0.48rem;
+    }
 }
