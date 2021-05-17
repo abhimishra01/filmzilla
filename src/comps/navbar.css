@@ -1,5 +1,5 @@
 header{
-    width:96vw;
+    width:100vw;
     padding:16px 1.6rem;
     color:var(--primary-heading);
     display:flex;
@@ -41,6 +41,7 @@ nav > p{
 .nav__keys >form  > input{
     padding:10px;
     font-size:18px;
+    margin-right:60px;
     background-color:var(--primary);
     font-family: cursive;
    
@@ -48,14 +49,6 @@ nav > p{
 .nav__keys > form > input:focus{
     outline:0;
 }
-
-/* .nav__keys > NavUserMenu{
-    width:80px;
-    height:40px;
-    font-size:18px;
-    background-color:#DBDBE5;
-} */
-
 
 
 @media screen and (max-width: 800px){
